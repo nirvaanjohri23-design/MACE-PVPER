@@ -1277,6 +1277,8 @@ function createBot() {
       defaultMove.fallDamageCost = 1000;
 
       initializeModules(bot, mcData, defaultMove);
+      // ---------- AUTO SHIELD ---------- function equipShield() {
+if (!bot || !botState.connected || !bot.inventory) return;
 
       // Attempt creative mode (only works if bot has OP and enabled in settings)
       setTimeout(() => {
