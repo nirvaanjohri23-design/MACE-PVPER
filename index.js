@@ -1224,7 +1224,7 @@ function createBot() {
     });
 
     bot.loadPlugin(pathfinder);
-
+bot.on('spawn', () => { bot.equip('shield', 'off-hand'); });
     // FIX: connection timeout - end the old bot before reconnecting to avoid ghost bots
     clearBotTimeouts();
     connectionTimeoutId = setTimeout(() => {
