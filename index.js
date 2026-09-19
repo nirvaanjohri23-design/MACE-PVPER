@@ -1224,7 +1224,7 @@ function createBot() {
     });
 
     bot.loadPlugin(pathfinder);
-bot.once('spawn', () => { bot.equip('shield', 'off-hand'); setInterval(() => { const player = bot.nearestEntity(e => e.type === 'player'); if (player) bot.lookAt(player.position.offset(0, player.position.y - bot.entity.position.y + 1.62, 0)); }, 1000); });
+bot.once('spawn', () => { setTimeout(() => { bot.equip('shield', 'off-hand'); }, 1000); setInterval(() => { const player = bot.nearestEntity(e => e.type === 'player'); if (player) bot.lookAt(player.position.offset(0, player.position.y - bot.entity.position.y + 1.62, 0)); }, 1000); });, 1000); });
     // FIX: connection timeout - end the old bot before reconnecting to avoid ghost bots
     clearBotTimeouts();
     connectionTimeoutId = setTimeout(() => {
